@@ -12,6 +12,7 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+
 public abstract class Page {
 	protected static final int TWO_MINUTE_WAIT = 120;
 	protected static final int ONE_MINUTE_WAIT = 60;
