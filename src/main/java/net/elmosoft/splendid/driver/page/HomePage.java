@@ -12,7 +12,7 @@ public class HomePage extends Page {
     @FindBy(xpath = "//button[contains(text(), 'Add to cart')]")
     private List<BrowserElement> addToCartBtns;
 
-    @FindBy(xpath = "//a[@class='shopping_cart_link']/span[@class='shopping_cart_badge']")
+    @FindBy(xpath = "//*[@class='shopping_cart_link']")
     private BrowserElement cartIcon;
 
     @FindBy(id = "logout_sidebar_link")

@@ -5,7 +5,7 @@ import net.elmosoft.splendid.driver.element.BrowserElement;
 
 public class CheckoutOverviewPage extends Page {
 
-    @FindBy(xpath = "//div class[contains(text(),'Shipping Information')]")
+    @FindBy(xpath = "//div[contains(text(),'Shipping Information')]")
     private BrowserElement shippingInformation;
 
     @FindBy(id = "finish")

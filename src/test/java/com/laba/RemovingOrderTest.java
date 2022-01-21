@@ -32,7 +32,7 @@ public class RemovingOrderTest extends BaseSplendidTest {
 
         home.clickByRemoveBtn();
         Boolean result = home.isProductChosen();
-        Assert.assertTrue(result, "Product is chosen");
+        Assert.assertFalse(result, "Product is chosen");
 
 
 

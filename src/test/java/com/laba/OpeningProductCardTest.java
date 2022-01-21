@@ -18,7 +18,7 @@ import org.uncommons.reportng.HTMLReporter;
 @Feature("Shoping")
 @Guice
 
-public class OpeningProductCartTest extends BaseSplendidTest {
+public class OpeningProductCardTest extends BaseSplendidTest {
     @Test
     public void openProductInformation() {
         LoginPage login = new LoginPage();
