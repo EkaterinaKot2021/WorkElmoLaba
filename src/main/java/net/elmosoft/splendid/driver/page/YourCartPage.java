@@ -24,9 +24,7 @@ public class YourCartPage extends Page{
         return PageFactory.initElements(driver, YourCartPage.class);
     }
 
-    public Boolean isProductChosen() {
-        return product.isExists();
-    }
+
 
     public Boolean isCartItemLabelExist() {
         return cartItemLabel.isExists();
@@ -51,4 +49,5 @@ public class YourCartPage extends Page{
     public void waitForPageIsLoaded() {
 
     }
+
 }
