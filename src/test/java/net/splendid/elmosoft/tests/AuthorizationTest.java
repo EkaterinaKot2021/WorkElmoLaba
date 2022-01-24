@@ -1,8 +1,8 @@
-package com.laba;
+package net.splendid.elmosoft.tests;
 
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
-import net.elmosoft.splendid.driver.page.LoginPage;
+import net.splendid.elmosoft.pages.LoginPage;
 import net.elmosoft.splendid.service.runner.SuiteListener;
 import net.elmosoft.splendid.test.BaseSplendidTest;
 import org.testng.Assert;

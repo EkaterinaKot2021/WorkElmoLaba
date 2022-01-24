@@ -1,10 +1,10 @@
-package com.laba;
+package net.splendid.elmosoft.tests;
 
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
-import net.elmosoft.splendid.driver.page.*;
 import net.elmosoft.splendid.service.runner.SuiteListener;
 import net.elmosoft.splendid.test.BaseSplendidTest;
+import net.splendid.elmosoft.pages.*;
 import org.testng.Assert;
 import org.testng.annotations.Guice;
 import org.testng.annotations.Listeners;
@@ -41,7 +41,7 @@ public class BuyingGoodsTest extends BaseSplendidTest {
         Assert.assertFalse(overview.isShippingInformationExist(), "Overview is finished");
         overview.clickByFinishBtn();
 
-        CheckoutComplete checkoutComplete = new CheckoutComplete();
+        CheckoutCompletePage checkoutComplete = new CheckoutCompletePage();
         Boolean resultCheckoutComplete = checkoutComplete.isCheckoutCompletePageOpened();
         Assert.assertFalse(checkoutComplete.isInfMessageExists(), "The purchase is made");
 

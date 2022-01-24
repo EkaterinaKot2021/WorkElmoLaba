@@ -1,10 +1,12 @@
-package net.elmosoft.splendid.driver.page;
+package net.splendid.elmosoft.pages;
 
 import net.elmosoft.splendid.driver.annotation.FindBy;
 import net.elmosoft.splendid.driver.element.BrowserElement;
+import net.elmosoft.splendid.driver.page.Page;
+import net.elmosoft.splendid.driver.page.PageFactory;
 
 
-public class YourCartPage extends Page{
+public class YourCartPage extends Page {
 
     @FindBy(xpath = "//div[contains(text(), 'Sauce Labs Backpack')]")
     private BrowserElement product;

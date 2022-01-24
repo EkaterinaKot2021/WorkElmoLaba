@@ -1,10 +1,10 @@
-package com.laba;
+package net.splendid.elmosoft.tests;
 
 import io.qameta.allure.Epic;
 import io.qameta.allure.Feature;
-import net.elmosoft.splendid.driver.page.HomePage;
-import net.elmosoft.splendid.driver.page.LoginPage;
-import net.elmosoft.splendid.driver.page.ProductPage;
+import net.splendid.elmosoft.pages.HomePage;
+import net.splendid.elmosoft.pages.LoginPage;
+import net.splendid.elmosoft.pages.YourCartPage;
 import net.elmosoft.splendid.service.runner.SuiteListener;
 import net.elmosoft.splendid.test.BaseSplendidTest;
 import org.testng.Assert;
@@ -18,21 +18,22 @@ import org.uncommons.reportng.HTMLReporter;
 @Feature("Shoping")
 @Guice
 
-public class OpeningProductCardTest extends BaseSplendidTest {
+public class ShoppingTest extends BaseSplendidTest {
     @Test
-    public void openProductInformation() {
+    public void verifyAddingToCart() {
         LoginPage login = new LoginPage();
         login.openPage().checkPage();
         login.doLogin("standard_user", "secret_sauce");
 
         HomePage home = new HomePage();
-        home.clickByProduct();
+        home.clickByAddToCartBtn(0);
+        Boolean resultChoice = home.clickByCartIcon().isProductChosen();
+        Assert.assertTrue(resultChoice, "Product is not choosen!");
 
-        ProductPage product = new ProductPage();
-        Boolean result = product.isProductPageOpened();
-        Assert.assertTrue(result, "Product Page is not opened!");
-
-
-
+        YourCartPage yourCart = new YourCartPage();
+        yourCart.clickByRemove();
+        Assert.assertFalse(yourCart.isCartItemLabelExist(), "Product is choosen!");
     }
 }
+
+

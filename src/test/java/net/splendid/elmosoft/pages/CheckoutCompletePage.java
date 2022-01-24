@@ -1,9 +1,10 @@
-package net.elmosoft.splendid.driver.page;
+package net.splendid.elmosoft.pages;
 
 import net.elmosoft.splendid.driver.annotation.FindBy;
 import net.elmosoft.splendid.driver.element.BrowserElement;
+import net.elmosoft.splendid.driver.page.Page;
 
-public class CheckoutComplete extends Page{
+public class CheckoutCompletePage extends Page {
 
     @FindBy(xpath = "//*[contains(text(),'THANK YOU FOR YOUR ORDER')]")
     private BrowserElement infMessage;

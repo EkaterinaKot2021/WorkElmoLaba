@@ -1,8 +1,11 @@
-package net.elmosoft.splendid.driver.page;
+package net.splendid.elmosoft.pages;
 
 import net.elmosoft.splendid.driver.annotation.FindBy;
 import net.elmosoft.splendid.driver.element.BrowserElement;
+import net.elmosoft.splendid.driver.page.Page;
+import net.elmosoft.splendid.driver.page.PageFactory;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class HomePage extends Page {
@@ -30,7 +33,23 @@ public class HomePage extends Page {
     @FindBy(xpath = "//div[contains(text(), 'Sauce Labs Backpack')]")
     private BrowserElement product;
 
+    @FindBy(id = "//a[@href='https://saucelabs.com/']")
+    private BrowserElement aboutBtn;
 
+    @FindBy(xpath = "//*[@class='product_sort_container']")
+    private BrowserElement sortBtn;
+
+    @FindBy(xpath = "//*[@value='za']")
+    private BrowserElement sortingZtoA;
+
+    @FindBy(xpath = "//*[@value='az']")
+    private BrowserElement sortingAtoZ;
+
+    @FindBy(xpath = "//*[@class='inventory_item_name']")
+    private List <BrowserElement> itemsSortedAtoZ;
+
+    @FindBy(xpath = "")
+    private List <BrowserElement> itemsSortedZtoA;
 
 
 
@@ -49,6 +68,7 @@ public class HomePage extends Page {
         cartIcon.click();
         return PageFactory.initElements(driver, HomePage.class);
     }
+
     public HomePage clickByRemoveBtn() {
         removeBtn.click();
         return PageFactory.initElements(driver, HomePage.class);
@@ -62,9 +82,10 @@ public class HomePage extends Page {
         logoutBtn.click();
         return PageFactory.initElements(driver, HomePage.class);
     }
+
     public Boolean isProductChosen() {
-        product.waitImplicitly(2);
-        return product.isExists();
+        cartBadgeIcon.waitImplicitly(2);
+        return cartBadgeIcon.isExists();
     }
 
     public HomePage clickByTwitterLink() {
@@ -89,12 +110,34 @@ public class HomePage extends Page {
     public String getNumberCartBadgeIcon() {
         return cartBadgeIcon.getText();
     }
+
     public HomePage clickByProduct() {
         product.click();
         return PageFactory.initElements(driver, HomePage.class);
     }
 
+    public String getNewTabCurrentUrl(int index) {
+        ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+        driver.switchTo().window(tabs.get(index));
+        return driver.getCurrentUrl();
+    }
 
+    public HomePage clickByAboutBtn() {
+        aboutBtn.click();
+        return PageFactory.initElements(driver, HomePage.class);
+    }
+
+    public Boolean getDefaultSorting() {
+        return sortingAtoZ.isExists();
+    }
+
+    public HomePage clickBySortingBtn() {
+        sortBtn.click();
+        return PageFactory.initElements(driver, HomePage.class);
 }
 
-
+    public HomePage clickBySortingZtoA() {
+        sortingZtoA.click();
+        return PageFactory.initElements(driver, HomePage.class);
+    }
+}

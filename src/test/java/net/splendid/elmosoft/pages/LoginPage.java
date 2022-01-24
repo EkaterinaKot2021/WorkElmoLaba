@@ -1,7 +1,8 @@
-package net.elmosoft.splendid.driver.page;
+package net.splendid.elmosoft.pages;
 import net.elmosoft.splendid.driver.annotation.FindBy;
 import net.elmosoft.splendid.driver.element.BrowserElement;
-
+import net.elmosoft.splendid.driver.page.Page;
+import net.elmosoft.splendid.driver.page.PageFactory;
 
 
 public class LoginPage extends Page {
